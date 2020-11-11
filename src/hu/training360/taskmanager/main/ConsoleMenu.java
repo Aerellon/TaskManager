@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class ConsoleMenu {
 
-    private LinkedHashMap<String, Runnable> actionsMap = new LinkedHashMap<>();
-    private Scanner scanner;
+    private final LinkedHashMap<String, Runnable> actionsMap = new LinkedHashMap<>();
+    private final Scanner scanner;
 
     public ConsoleMenu(Scanner scanner) {
         this.scanner = scanner;
