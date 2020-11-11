@@ -15,10 +15,10 @@ public class TaskManager {
         System.out.println("*** Create new task ***");
 
         System.out.println("user:");
-        String user = scanner.next();
+        String user = scanner.nextLine();
 
         System.out.println("description:");
-        String description = scanner.next();
+        String description = scanner.nextLine();
 
         System.out.println("hours to complete:");
         for(HoursToComplete item : HoursToComplete.values()) {
@@ -38,6 +38,8 @@ public class TaskManager {
         for (Task t : tasks) {
             System.out.println(tasks.indexOf(t) + ":" + t.toString());
         }
+
+        System.out.println("\n");
     }
 
     public static void listInProgress() {
