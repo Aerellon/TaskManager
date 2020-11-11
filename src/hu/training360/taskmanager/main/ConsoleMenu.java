@@ -25,11 +25,16 @@ public class ConsoleMenu {
             sb.append(String.format(" %d: %s%n", i, actionNames.get(i)));
         }
 
+        //noinspection InfiniteLoopStatement
         while (true) {
             System.out.println(sb.toString());
             int actionNumber = scanner.nextInt();
             List<Runnable> actions = new ArrayList<>(actionsMap.values());
-            actions.get(actionNumber).run();
+            try {
+                actions.get(actionNumber).run();
+            } catch (IndexOutOfBoundsException ex) {
+                System.out.println("No such option\n");
+            }
         }
     }
 }
